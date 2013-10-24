@@ -30,7 +30,8 @@
 
 @interface KZCameraView : UIView <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
 
-- (id)initWithFrame:(CGRect)frame withVideoPreviewFrame:(CGRect)videoFrame;
+@property (nonatomic, assign) float maxDuration;
 
+- (id)initWithFrame:(CGRect)frame withVideoPreviewFrame:(CGRect)videoFrame;
 - (IBAction)saveVideo:(id)sender;
 @end

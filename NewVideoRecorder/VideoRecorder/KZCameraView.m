@@ -29,8 +29,6 @@
 #import "AVCamRecorder.h"
 #import <AVFoundation/AVFoundation.h>
 
-#define MAX_DURATION 10
-
 static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 
 @interface KZCameraView () <UIGestureRecognizerDelegate>
@@ -210,7 +208,7 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
             NSLog(@"START");
             if (![[[self captureManager] recorder] isRecording])
             {
-                if (self.duration < MAX_DURATION)
+                if (self.duration < self.maxDuration)
                 {
                     [[self captureManager] startRecording];
                 }
@@ -238,7 +236,7 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
     if ([[[self captureManager] recorder] isRecording])
     {
         self.duration = self.duration + 0.1;
-        self.durationProgressBar.progress = self.duration/MAX_DURATION;
+        self.durationProgressBar.progress = self.duration/self.maxDuration;
         NSLog(@"self.duration %f, self.progressBar %f", self.duration, self.durationProgressBar.progress);
         if (self.durationProgressBar.progress > .99) {
             [self.durationTimer invalidate];
