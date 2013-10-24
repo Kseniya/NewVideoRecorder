@@ -2,7 +2,8 @@ VideoRecorder
 ================
 
 Vine like video recorder. Hold you finger - record, let it go - stop recording.
-Also ability to add audio track from itunes library to any video from camera roll.
+
+Based around Apple's AVCam sample code.
 
 Still needs some work.
 
