@@ -12,8 +12,12 @@ Can be easily used in other project just copy VideoRecorder folder to your proje
 Add Camera View into you view controller 
 
 
-       KZCameraView *cam = [[KZCameraView alloc]initWithFrame:self.view.frame withVideoPreviewFrame:CGRectMake(0.0, 0.0, 320.0, 320.0)];
-       [self.view addSubview:cam];
+        KZCameraView *cam = [[KZCameraView alloc]initWithFrame:self.view.frame withVideoPreviewFrame:CGRectMake(0.0, 0.0, 320.0, 320.0)];
+        [self.view addSubview:cam];
+       
+Set max duration of the video
+
+       cam.maxDuration = 10.0;
 
 Create a button (in example project bar button) to save recorded video.
 
