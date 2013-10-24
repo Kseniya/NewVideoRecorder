@@ -38,7 +38,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="qJz-YC-1Jk" kind="push" id="QWN-Nw-uas"/>
+                                    <segue destination="9BA-rC-Kad" kind="push" id="SVZ-RU-Qnf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MmG-iz-dsO">
@@ -119,79 +119,23 @@
             <point key="canvasLocation" x="692" y="400"/>
         </scene>
         <!--Recorder View Controller-->
-        <scene sceneID="8Rq-IY-Bcg">
+        <scene sceneID="pWf-ea-SRQ">
             <objects>
-                <viewController id="qJz-YC-1Jk" customClass="RecorderViewController" sceneMemberID="viewController">
+                <viewController id="9BA-rC-Kad" customClass="RecorderViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="r71-7P-HKT"/>
-                        <viewControllerLayoutGuide type="bottom" id="rxZ-Qu-Ucm"/>
+                        <viewControllerLayoutGuide type="top" id="240-2c-q1w"/>
+                        <viewControllerLayoutGuide type="bottom" id="iPU-3f-yug"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="77B-Nd-uuF">
+                    <view key="view" contentMode="scaleToFill" id="8ol-FY-TYv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Usk-Rj-qUy">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                            <view hidden="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QIU-mr-F5Y">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="320"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eZg-cp-z6a">
-                                        <rect key="frame" x="36" y="243" width="249" height="2"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </progressView>
-                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="a7d-NB-akN">
-                                        <rect key="frame" x="150" y="209" width="20" height="20"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </activityIndicatorView>
-                                    <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9uE-k8-Hey">
-                                        <rect key="frame" x="20" y="174" width="280" height="21"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="calibratedRGB"/>
-                            </view>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q7G-ff-3d0">
-                                <rect key="frame" x="0.0" y="320" width="320" height="2"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                            </progressView>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <gestureRecognizers/>
-                        <connections>
-                            <outletCollection property="gestureRecognizers" destination="bGg-rS-BrC" appends="YES" id="oPo-2m-bLc"/>
-                        </connections>
                     </view>
-                    <navigationItem key="navigationItem" id="mrU-sk-HAj">
-                        <barButtonItem key="rightBarButtonItem" title="Save" id="qGn-PL-HF6">
-                            <connections>
-                                <action selector="saveVideo:" destination="qJz-YC-1Jk" id="C2N-5P-MNZ"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="activityView" destination="a7d-NB-akN" id="7DV-fi-6u9"/>
-                        <outlet property="durationProgressBar" destination="Q7G-ff-3d0" id="AbJ-IL-0Gc"/>
-                        <outlet property="progressBar" destination="eZg-cp-z6a" id="OXw-3Z-2dE"/>
-                        <outlet property="progressLabel" destination="9uE-k8-Hey" id="AZW-Pr-3iJ"/>
-                        <outlet property="progressView" destination="QIU-mr-F5Y" id="bMg-gg-Ay6"/>
-                        <outlet property="videoPreviewView" destination="Usk-Rj-qUy" id="rnC-7W-ql4"/>
-                    </connections>
+                    <navigationItem key="navigationItem" id="EoX-a3-Tai"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gxp-UF-dru" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="bGg-rS-BrC">
-                    <connections>
-                        <action selector="holdScreen:" destination="qJz-YC-1Jk" id="3yI-e6-JQH"/>
-                    </connections>
-                </pongPressGestureRecognizer>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nz4-h4-qt2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="-313"/>
+            <point key="canvasLocation" x="692" y="-371"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

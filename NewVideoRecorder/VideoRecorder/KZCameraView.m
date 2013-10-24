@@ -16,6 +16,21 @@
 static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 
 @interface KZCameraView () <UIGestureRecognizerDelegate>
+
+@property (nonatomic,retain) CaptureManager *captureManager;
+@property (nonatomic,retain) IBOutlet UIView *videoPreviewView;
+@property (nonatomic,retain) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
+@property (nonatomic,retain) IBOutlet UILabel *focusModeLabel;
+//Progress
+@property (nonatomic,retain) IBOutlet UIView *progressView;
+@property (nonatomic,retain) IBOutlet UIProgressView *progressBar;
+@property (nonatomic,retain) IBOutlet UILabel *progressLabel;
+@property (nonatomic,retain) IBOutlet UIActivityIndicatorView *activityView;
+
+@property (nonatomic,retain) IBOutlet UIProgressView *durationProgressBar;
+@property (nonatomic,assign) float duration;
+@property (nonatomic,retain) NSTimer *durationTimer;
+
 @end
 
 @interface KZCameraView (InternalMethods) <UIGestureRecognizerDelegate>
@@ -31,14 +46,105 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 
 @implementation KZCameraView
 
-- (id)initWithFrame:(CGRect)frame
+- (id)initWithFrame:(CGRect)frame withVideoPreviewFrame:(CGRect)videoFrame
 {
     self = [super initWithFrame:frame];
     if (self) {
-        [self setSubviews];
+        if ([self captureManager] == nil) {
+            CaptureManager *manager = [[CaptureManager alloc] init];
+            [self setCaptureManager:manager];
+            
+            [[self captureManager] setDelegate:self];
+            
+            if ([[self captureManager] setupSession]) {
+                // Create video preview layer and add it to the UI
+                AVCaptureVideoPreviewLayer *newCaptureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:[[self captureManager] session]];
+                
+                self.videoPreviewView = [[UIView alloc]init];
+                self.videoPreviewView.frame =  CGRectMake(0.0, 0.0, videoFrame.size.width, videoFrame.size.width);
+                CALayer *viewLayer = self.videoPreviewView.layer;
+                [viewLayer setMasksToBounds:YES];
+                [self addSubview:self.videoPreviewView];
+                
+                CGRect bounds = self.videoPreviewView.bounds;
+                [newCaptureVideoPreviewLayer setFrame:bounds];
+                NSLog(@"%f, %f, %f, %f", newCaptureVideoPreviewLayer.frame.origin.x, newCaptureVideoPreviewLayer.frame.origin.y, newCaptureVideoPreviewLayer.frame.size.width, newCaptureVideoPreviewLayer.frame.size.height);
+                
+                if ([newCaptureVideoPreviewLayer.connection isVideoOrientationSupported]) {
+                    [newCaptureVideoPreviewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
+                }
+                
+                [newCaptureVideoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
+                
+                [viewLayer insertSublayer:newCaptureVideoPreviewLayer below:[[viewLayer sublayers] objectAtIndex:0]];
+                
+                [self setCaptureVideoPreviewLayer:newCaptureVideoPreviewLayer];
+                
+                // Start the session. This is done asychronously since -startRunning doesn't return until the session is running.
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+                    [[[self captureManager] session] startRunning];
+                });
+                
+                //Record Long Press Gesture
+                UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(holdScreen:)];
+                [longPress setDelegate:self];
+                [self addGestureRecognizer:longPress];
+                
+                self.durationProgressBar = [[UIProgressView alloc]initWithFrame:CGRectMake(0.0, videoFrame.origin.y + videoFrame.size.height, videoFrame.size.width, 2.0)];
+                [self addSubview:self.durationProgressBar];
+                
+                // Create the focus mode UI overlay
+                UILabel *newFocusModeLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, viewLayer.bounds.size.width - 20, 20)];
+                [newFocusModeLabel setBackgroundColor:[UIColor clearColor]];
+                [newFocusModeLabel setTextColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.50]];
+                AVCaptureFocusMode initialFocusMode = [[[self.captureManager videoInput] device] focusMode];
+                [newFocusModeLabel setText:[NSString stringWithFormat:@"focus: %@", [self stringForFocusMode:initialFocusMode]]];
+                [self.videoPreviewView addSubview:newFocusModeLabel];
+                [self addObserver:self forKeyPath:@"captureManager.videoInput.device.focusMode" options:NSKeyValueObservingOptionNew context:AVCamFocusModeObserverContext];
+                [self setFocusModeLabel:newFocusModeLabel];
+                
+                // Add a single tap gesture to focus on the point tapped, then lock focus
+                UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToAutoFocus:)];
+                [singleTap setDelegate:self];
+                [singleTap setNumberOfTapsRequired:1];
+                [self.videoPreviewView addGestureRecognizer:singleTap];
+                
+                // Add a double tap gesture to reset the focus mode to continuous auto focus
+                UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToContinouslyAutoFocus:)];
+                [doubleTap setDelegate:self];
+                [doubleTap setNumberOfTapsRequired:2];
+                [singleTap requireGestureRecognizerToFail:doubleTap];
+                [self.videoPreviewView addGestureRecognizer:doubleTap];
+                
+                //Create progress view for saving the video
+                self.progressView = [[UIView alloc]initWithFrame:videoFrame];
+                self.progressView.backgroundColor = [UIColor clearColor];
+                self.progressView.hidden = YES;
+                
+                self.progressBar = [[UIProgressView alloc]initWithFrame:CGRectMake(0.0, 0.0, videoFrame.size.width - 60.0, 2.0)];
+                
+                self.progressLabel = [[UILabel alloc] initWithFrame:CGRectMake(0.0, 0.0, videoFrame.size.width - 60.0, 20.0)];
+                self.progressLabel.backgroundColor = [UIColor clearColor];
+                self.progressLabel.textColor = [UIColor whiteColor];
+                self.progressLabel.textAlignment = NSTextAlignmentCenter;
+                
+                self.activityView = [[UIActivityIndicatorView alloc]initWithFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
+                self.activityView.hidesWhenStopped = YES;
+                
+                self.progressBar.center = self.progressView.center;
+                self.activityView.center = self.progressView.center;
+                self.progressLabel.center = CGPointMake(self.progressView.center.x, self.progressView.center.y + 20.0);
+                
+                [self addSubview:self.progressView];
+                [self.progressView addSubview:self.progressBar];
+                [self.progressView addSubview:self.progressLabel];
+                [self.progressView addSubview:self.activityView];
+            }
+        }
     }
     return self;
 }
+
 
 - (NSString *)stringForFocusMode:(AVCaptureFocusMode)focusMode
 {
@@ -64,67 +170,6 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
     [self removeObserver:self forKeyPath:@"captureManager.videoInput.device.focusMode"];
 }
 
-- (void)setSubviews
-{
-    //[self.navigationController setNavigationBarHidden:YES];
-	if ([self captureManager] == nil) {
-		CaptureManager *manager = [[CaptureManager alloc] init];
-		[self setCaptureManager:manager];
-		
-		[[self captureManager] setDelegate:self];
-        
-		if ([[self captureManager] setupSession]) {
-            // Create video preview layer and add it to the UI
-			AVCaptureVideoPreviewLayer *newCaptureVideoPreviewLayer = [[AVCaptureVideoPreviewLayer alloc] initWithSession:[[self captureManager] session]];
-            
-            self.videoPreviewView.frame =  CGRectMake(0.0, 0.0, 320.0, 320.0);
-			CALayer *viewLayer = self.videoPreviewView.layer;
-			[viewLayer setMasksToBounds:YES];
-			
-			CGRect bounds = self.videoPreviewView.bounds;
-			[newCaptureVideoPreviewLayer setFrame:bounds];
-            NSLog(@"%f, %f, %f, %f", newCaptureVideoPreviewLayer.frame.origin.x, newCaptureVideoPreviewLayer.frame.origin.y, newCaptureVideoPreviewLayer.frame.size.width, newCaptureVideoPreviewLayer.frame.size.height);
-			
-			if ([newCaptureVideoPreviewLayer.connection isVideoOrientationSupported]) {
-				[newCaptureVideoPreviewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
-			}
-			
-			[newCaptureVideoPreviewLayer setVideoGravity:AVLayerVideoGravityResizeAspectFill];
-			
-			[viewLayer insertSublayer:newCaptureVideoPreviewLayer below:[[viewLayer sublayers] objectAtIndex:0]];
-			
-			[self setCaptureVideoPreviewLayer:newCaptureVideoPreviewLayer];
-			
-            // Start the session. This is done asychronously since -startRunning doesn't return until the session is running.
-			dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
-				[[[self captureManager] session] startRunning];
-			});
-			
-            // Create the focus mode UI overlay
-			UILabel *newFocusModeLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 10, viewLayer.bounds.size.width - 20, 20)];
-			[newFocusModeLabel setBackgroundColor:[UIColor clearColor]];
-			[newFocusModeLabel setTextColor:[UIColor colorWithRed:1.0 green:1.0 blue:1.0 alpha:0.50]];
-			AVCaptureFocusMode initialFocusMode = [[[self.captureManager videoInput] device] focusMode];
-			[newFocusModeLabel setText:[NSString stringWithFormat:@"focus: %@", [self stringForFocusMode:initialFocusMode]]];
-			[self.videoPreviewView addSubview:newFocusModeLabel];
-			[self addObserver:self forKeyPath:@"captureManager.videoInput.device.focusMode" options:NSKeyValueObservingOptionNew context:AVCamFocusModeObserverContext];
-			[self setFocusModeLabel:newFocusModeLabel];
-            
-            // Add a single tap gesture to focus on the point tapped, then lock focus
-			UITapGestureRecognizer *singleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToAutoFocus:)];
-			[singleTap setDelegate:self];
-			[singleTap setNumberOfTapsRequired:1];
-			[self.videoPreviewView addGestureRecognizer:singleTap];
-			
-            // Add a double tap gesture to reset the focus mode to continuous auto focus
-			UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapToContinouslyAutoFocus:)];
-			[doubleTap setDelegate:self];
-			[doubleTap setNumberOfTapsRequired:2];
-			[singleTap requireGestureRecognizerToFail:doubleTap];
-			[self.videoPreviewView addGestureRecognizer:doubleTap];
-		}
-	}
-}
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
@@ -177,7 +222,7 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
         self.duration = self.duration + 0.1;
         self.durationProgressBar.progress = self.duration/MAX_DURATION;
         NSLog(@"self.duration %f, self.progressBar %f", self.duration, self.durationProgressBar.progress);
-        if (self.progressBar.progress > .99) {
+        if (self.durationProgressBar.progress > .99) {
             [self.durationTimer invalidate];
             self.durationTimer = nil;
             [[self captureManager] stopRecording];
@@ -204,8 +249,6 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 {
     CGPoint pointOfInterest = CGPointMake(.5f, .5f);
     CGSize frameSize = self.videoPreviewView.frame.size;
-    NSLog(@"%f, %f", self.videoPreviewView.frame.origin.x, self.videoPreviewView.frame.origin.y);
-    NSLog(@"view coordinates %f,%f", viewCoordinates.x, viewCoordinates.y);
     
     if ([self.captureVideoPreviewLayer.connection isVideoMirrored]) {
         viewCoordinates.x = frameSize.width - viewCoordinates.x;
@@ -320,16 +363,19 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
         self.progressLabel.text = @"Video Saving Failed";
     } else {
         self.progressLabel.text = @"Saved To Photo Album";
-        [self performSelector:@selector(popView) withObject:nil afterDelay:0.5];
+        [self performSelector:@selector(refresh) withObject:nil afterDelay:0.5];
     }
     
     [self.activityView stopAnimating];
 }
 
--(void)popView
+-(void)refresh
 {
     self.progressView.hidden = YES;
-    //[self.navigationController popViewControllerAnimated:YES];
+    self.duration = 0.0;
+    self.durationProgressBar.progress = 0.0;
+    [self.durationTimer invalidate];
+    self.durationTimer = nil;
 }
 
 - (void)captureManager:(CaptureManager *)captureManager didFailWithError:(NSError *)error

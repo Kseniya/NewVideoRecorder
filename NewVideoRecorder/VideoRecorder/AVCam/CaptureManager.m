@@ -155,8 +155,9 @@
 {
     BOOL success = NO;
     
+    //Torch or flash can be set here. I personaly don't like it 
 	// Set torch and flash mode to auto
-	if ([[self backFacingCamera] hasFlash]) {
+/*	if ([[self backFacingCamera] hasFlash]) {
 		if ([[self backFacingCamera] lockForConfiguration:nil]) {
 			if ([[self backFacingCamera] isFlashModeSupported:AVCaptureFlashModeAuto]) {
 				[[self backFacingCamera] setFlashMode:AVCaptureFlashModeAuto];
@@ -171,7 +172,7 @@
 			}
 			[[self backFacingCamera] unlockForConfiguration];
 		}
-	}
+	}*/
 	
     // Init the device inputs
     AVCaptureDeviceInput *newVideoInput = [[AVCaptureDeviceInput alloc] initWithDevice:[self backFacingCamera] error:nil];

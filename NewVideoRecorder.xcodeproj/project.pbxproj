@@ -28,11 +28,11 @@
 		6E28FD7D181615F900155DB8 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28FD7C181615F900155DB8 /* AVFoundation.framework */; };
 		6E28FD7F181615FF00155DB8 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28FD7E181615FF00155DB8 /* AssetsLibrary.framework */; };
 		6E28FD82181617B700155DB8 /* AudioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28FD81181617B700155DB8 /* AudioViewController.m */; };
-		6E28FD851816182A00155DB8 /* RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28FD841816182A00155DB8 /* RecorderViewController.m */; };
-		6E28FD8D18161B1300155DB8 /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28FD8818161B1300155DB8 /* AVCamRecorder.m */; };
-		6E28FD8E18161B1300155DB8 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28FD8A18161B1300155DB8 /* AVCamUtilities.m */; };
-		6E28FD8F18161B1300155DB8 /* CaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28FD8C18161B1300155DB8 /* CaptureManager.m */; };
-		6E28FD9218161BCF00155DB8 /* KZCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E28FD9118161BCF00155DB8 /* KZCameraView.m */; };
+		6E52CAA11818C14A00B92B94 /* RecorderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52CAA01818C14A00B92B94 /* RecorderViewController.m */; };
+		6E52CAAC1818CF6600B92B94 /* AVCamRecorder.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52CAA51818CF6600B92B94 /* AVCamRecorder.m */; };
+		6E52CAAD1818CF6600B92B94 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52CAA71818CF6600B92B94 /* AVCamUtilities.m */; };
+		6E52CAAE1818CF6600B92B94 /* CaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52CAA91818CF6600B92B94 /* CaptureManager.m */; };
+		6E52CAAF1818CF6600B92B94 /* KZCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52CAAB1818CF6600B92B94 /* KZCameraView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,16 +73,16 @@
 		6E28FD7E181615FF00155DB8 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		6E28FD80181617B700155DB8 /* AudioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioViewController.h; sourceTree = "<group>"; };
 		6E28FD81181617B700155DB8 /* AudioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AudioViewController.m; sourceTree = "<group>"; };
-		6E28FD831816182A00155DB8 /* RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecorderViewController.h; sourceTree = "<group>"; };
-		6E28FD841816182A00155DB8 /* RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecorderViewController.m; sourceTree = "<group>"; };
-		6E28FD8718161B1300155DB8 /* AVCamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamRecorder.h; sourceTree = "<group>"; };
-		6E28FD8818161B1300155DB8 /* AVCamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamRecorder.m; sourceTree = "<group>"; };
-		6E28FD8918161B1300155DB8 /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
-		6E28FD8A18161B1300155DB8 /* AVCamUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamUtilities.m; sourceTree = "<group>"; };
-		6E28FD8B18161B1300155DB8 /* CaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureManager.h; sourceTree = "<group>"; };
-		6E28FD8C18161B1300155DB8 /* CaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureManager.m; sourceTree = "<group>"; };
-		6E28FD9018161BCF00155DB8 /* KZCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZCameraView.h; sourceTree = "<group>"; };
-		6E28FD9118161BCF00155DB8 /* KZCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZCameraView.m; sourceTree = "<group>"; };
+		6E52CA9F1818C14A00B92B94 /* RecorderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecorderViewController.h; sourceTree = "<group>"; };
+		6E52CAA01818C14A00B92B94 /* RecorderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecorderViewController.m; sourceTree = "<group>"; };
+		6E52CAA41818CF6600B92B94 /* AVCamRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamRecorder.h; sourceTree = "<group>"; };
+		6E52CAA51818CF6600B92B94 /* AVCamRecorder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamRecorder.m; sourceTree = "<group>"; };
+		6E52CAA61818CF6600B92B94 /* AVCamUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AVCamUtilities.h; sourceTree = "<group>"; };
+		6E52CAA71818CF6600B92B94 /* AVCamUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AVCamUtilities.m; sourceTree = "<group>"; };
+		6E52CAA81818CF6600B92B94 /* CaptureManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CaptureManager.h; sourceTree = "<group>"; };
+		6E52CAA91818CF6600B92B94 /* CaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureManager.m; sourceTree = "<group>"; };
+		6E52CAAA1818CF6600B92B94 /* KZCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZCameraView.h; sourceTree = "<group>"; };
+		6E52CAAB1818CF6600B92B94 /* KZCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZCameraView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,7 +154,7 @@
 		6E28FD45181615AD00155DB8 /* NewVideoRecorder */ = {
 			isa = PBXGroup;
 			children = (
-				6E28FD8618161B1300155DB8 /* AVCam */,
+				6E52CAA21818CF6600B92B94 /* VideoRecorder */,
 				6E28FD4E181615AE00155DB8 /* AppDelegate.h */,
 				6E28FD4F181615AE00155DB8 /* AppDelegate.m */,
 				6E28FD51181615AE00155DB8 /* Main.storyboard */,
@@ -162,10 +162,8 @@
 				6E28FD55181615AE00155DB8 /* ViewController.m */,
 				6E28FD80181617B700155DB8 /* AudioViewController.h */,
 				6E28FD81181617B700155DB8 /* AudioViewController.m */,
-				6E28FD831816182A00155DB8 /* RecorderViewController.h */,
-				6E28FD841816182A00155DB8 /* RecorderViewController.m */,
-				6E28FD9018161BCF00155DB8 /* KZCameraView.h */,
-				6E28FD9118161BCF00155DB8 /* KZCameraView.m */,
+				6E52CA9F1818C14A00B92B94 /* RecorderViewController.h */,
+				6E52CAA01818C14A00B92B94 /* RecorderViewController.m */,
 				6E28FD57181615AE00155DB8 /* Images.xcassets */,
 				6E28FD46181615AD00155DB8 /* Supporting Files */,
 			);
@@ -201,15 +199,25 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		6E28FD8618161B1300155DB8 /* AVCam */ = {
+		6E52CAA21818CF6600B92B94 /* VideoRecorder */ = {
 			isa = PBXGroup;
 			children = (
-				6E28FD8718161B1300155DB8 /* AVCamRecorder.h */,
-				6E28FD8818161B1300155DB8 /* AVCamRecorder.m */,
-				6E28FD8918161B1300155DB8 /* AVCamUtilities.h */,
-				6E28FD8A18161B1300155DB8 /* AVCamUtilities.m */,
-				6E28FD8B18161B1300155DB8 /* CaptureManager.h */,
-				6E28FD8C18161B1300155DB8 /* CaptureManager.m */,
+				6E52CAA31818CF6600B92B94 /* AVCam */,
+				6E52CAAA1818CF6600B92B94 /* KZCameraView.h */,
+				6E52CAAB1818CF6600B92B94 /* KZCameraView.m */,
+			);
+			path = VideoRecorder;
+			sourceTree = "<group>";
+		};
+		6E52CAA31818CF6600B92B94 /* AVCam */ = {
+			isa = PBXGroup;
+			children = (
+				6E52CAA41818CF6600B92B94 /* AVCamRecorder.h */,
+				6E52CAA51818CF6600B92B94 /* AVCamRecorder.m */,
+				6E52CAA61818CF6600B92B94 /* AVCamUtilities.h */,
+				6E52CAA71818CF6600B92B94 /* AVCamUtilities.m */,
+				6E52CAA81818CF6600B92B94 /* CaptureManager.h */,
+				6E52CAA91818CF6600B92B94 /* CaptureManager.m */,
 			);
 			path = AVCam;
 			sourceTree = "<group>";
@@ -311,13 +319,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6E28FD851816182A00155DB8 /* RecorderViewController.m in Sources */,
-				6E28FD8E18161B1300155DB8 /* AVCamUtilities.m in Sources */,
-				6E28FD8F18161B1300155DB8 /* CaptureManager.m in Sources */,
 				6E28FD56181615AE00155DB8 /* ViewController.m in Sources */,
-				6E28FD8D18161B1300155DB8 /* AVCamRecorder.m in Sources */,
+				6E52CAAD1818CF6600B92B94 /* AVCamUtilities.m in Sources */,
+				6E52CAAE1818CF6600B92B94 /* CaptureManager.m in Sources */,
 				6E28FD82181617B700155DB8 /* AudioViewController.m in Sources */,
-				6E28FD9218161BCF00155DB8 /* KZCameraView.m in Sources */,
+				6E52CAAC1818CF6600B92B94 /* AVCamRecorder.m in Sources */,
+				6E52CAA11818C14A00B92B94 /* RecorderViewController.m in Sources */,
+				6E52CAAF1818CF6600B92B94 /* KZCameraView.m in Sources */,
 				6E28FD50181615AE00155DB8 /* AppDelegate.m in Sources */,
 				6E28FD4C181615AE00155DB8 /* main.m in Sources */,
 			);
