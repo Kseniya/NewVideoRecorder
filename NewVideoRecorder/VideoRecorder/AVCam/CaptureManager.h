@@ -57,17 +57,17 @@
 @interface CaptureManager : NSObject {
 }
 
-@property (nonatomic,retain) AVCaptureSession *session;
+@property (nonatomic,strong) AVCaptureSession *session;
 @property (nonatomic,assign) AVCaptureVideoOrientation orientation;
-@property (nonatomic,retain) AVCaptureDeviceInput *videoInput;
-@property (nonatomic,retain) AVCaptureDeviceInput *audioInput;
-@property (nonatomic,retain) AVCaptureStillImageOutput *stillImageOutput;
-@property (nonatomic,retain) AVCamRecorder *recorder;
+@property (nonatomic,strong) AVCaptureDeviceInput *videoInput;
+@property (nonatomic,strong) AVCaptureDeviceInput *audioInput;
+@property (nonatomic,strong) AVCaptureStillImageOutput *stillImageOutput;
+@property (nonatomic,strong) AVCamRecorder *recorder;
 @property (nonatomic,assign) id deviceConnectedObserver;
 @property (nonatomic,assign) id deviceDisconnectedObserver;
 @property (nonatomic,assign) UIBackgroundTaskIdentifier backgroundRecordingID;
 @property (nonatomic,assign) id <CaptureManagerDelegate> delegate;
-@property (nonatomic,retain) NSMutableArray *assetsURLs;
+@property (nonatomic,strong) NSMutableArray *assetsURLs;
 @property (nonatomic,assign) NSTimer *exportProgressBarTimer;
 @property (nonatomic,strong) AVAssetExportSession *exportSession;
 

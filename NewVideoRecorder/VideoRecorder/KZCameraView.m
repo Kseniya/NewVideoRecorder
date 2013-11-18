@@ -33,19 +33,19 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 
 @interface KZCameraView () <UIGestureRecognizerDelegate>
 
-@property (nonatomic,retain) CaptureManager *captureManager;
-@property (nonatomic,retain) IBOutlet UIView *videoPreviewView;
-@property (nonatomic,retain) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
-@property (nonatomic,retain) IBOutlet UILabel *focusModeLabel;
+@property (nonatomic, strong) CaptureManager *captureManager;
+@property (nonatomic, strong) UIView *videoPreviewView;
+@property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
+@property (nonatomic, strong) UILabel *focusModeLabel;
 //Progress
-@property (nonatomic,retain) IBOutlet UIView *progressView;
-@property (nonatomic,retain) IBOutlet UIProgressView *progressBar;
-@property (nonatomic,retain) IBOutlet UILabel *progressLabel;
-@property (nonatomic,retain) IBOutlet UIActivityIndicatorView *activityView;
+@property (nonatomic,strong) UIView *progressView;
+@property (nonatomic,strong) UIProgressView *progressBar;
+@property (nonatomic,strong) UILabel *progressLabel;
+@property (nonatomic,strong) UIActivityIndicatorView *activityView;
 
-@property (nonatomic,retain) IBOutlet UIProgressView *durationProgressBar;
+@property (nonatomic,strong) UIProgressView *durationProgressBar;
 @property (nonatomic,assign) float duration;
-@property (nonatomic,retain) NSTimer *durationTimer;
+@property (nonatomic,strong) NSTimer *durationTimer;
 
 @end
 

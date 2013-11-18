@@ -55,8 +55,8 @@
 @interface AVCamRecorder : NSObject {
 }
 
-@property (nonatomic,retain) AVCaptureSession *session;
-@property (nonatomic,retain) AVCaptureMovieFileOutput *movieFileOutput;
+@property (nonatomic,strong) AVCaptureSession *session;
+@property (nonatomic,strong) AVCaptureMovieFileOutput *movieFileOutput;
 @property (nonatomic,copy) NSURL *outputFileURL;
 @property (nonatomic,readonly) BOOL recordsVideo;
 @property (nonatomic,readonly) BOOL recordsAudio;
