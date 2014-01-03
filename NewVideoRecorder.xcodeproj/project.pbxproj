@@ -31,6 +31,8 @@
 		6E52CAAD1818CF6600B92B94 /* AVCamUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52CAA71818CF6600B92B94 /* AVCamUtilities.m */; };
 		6E52CAAE1818CF6600B92B94 /* CaptureManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52CAA91818CF6600B92B94 /* CaptureManager.m */; };
 		6E52CAAF1818CF6600B92B94 /* KZCameraView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6E52CAAB1818CF6600B92B94 /* KZCameraView.m */; };
+		6E58CAA71876679900F69FDE /* switchCamera.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E58CAA51876679900F69FDE /* switchCamera.png */; };
+		6E58CAA81876679900F69FDE /* switchCamera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E58CAA61876679900F69FDE /* switchCamera@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,8 @@
 		6E52CAA91818CF6600B92B94 /* CaptureManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CaptureManager.m; sourceTree = "<group>"; };
 		6E52CAAA1818CF6600B92B94 /* KZCameraView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KZCameraView.h; sourceTree = "<group>"; };
 		6E52CAAB1818CF6600B92B94 /* KZCameraView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KZCameraView.m; sourceTree = "<group>"; };
+		6E58CAA51876679900F69FDE /* switchCamera.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = switchCamera.png; sourceTree = "<group>"; };
+		6E58CAA61876679900F69FDE /* switchCamera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "switchCamera@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,6 +167,8 @@
 		6E28FD46181615AD00155DB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E58CAA51876679900F69FDE /* switchCamera.png */,
+				6E58CAA61876679900F69FDE /* switchCamera@2x.png */,
 				6E28FD47181615AD00155DB8 /* NewVideoRecorder-Info.plist */,
 				6E28FD48181615AD00155DB8 /* InfoPlist.strings */,
 				6E28FD4B181615AE00155DB8 /* main.m */,
@@ -290,6 +296,8 @@
 			files = (
 				6E28FD58181615AE00155DB8 /* Images.xcassets in Resources */,
 				6E28FD4A181615AE00155DB8 /* InfoPlist.strings in Resources */,
+				6E58CAA81876679900F69FDE /* switchCamera@2x.png in Resources */,
+				6E58CAA71876679900F69FDE /* switchCamera.png in Resources */,
 				6E28FD53181615AE00155DB8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

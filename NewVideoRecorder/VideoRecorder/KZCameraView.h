@@ -28,9 +28,10 @@
 
 @class CaptureManager, AVCamPreviewView, AVCaptureVideoPreviewLayer;
 
-@interface KZCameraView : UIView <UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+@interface KZCameraView : UIView <UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, assign) float maxDuration;
+@property (nonatomic,assign) BOOL showCameraSwitch;
 
 - (id)initWithFrame:(CGRect)frame withVideoPreviewFrame:(CGRect)videoFrame;
 - (IBAction)saveVideo:(id)sender;

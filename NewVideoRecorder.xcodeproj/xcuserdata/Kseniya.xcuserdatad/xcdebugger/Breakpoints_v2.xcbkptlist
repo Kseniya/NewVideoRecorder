@@ -230,11 +230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "498"
-            endingLineNumber = "498"
+            startingLineNumber = "528"
+            endingLineNumber = "528"
             landmarkName = "-recorder:recordingDidFinishToOutputFileURL:error:"
             landmarkType = "5">
          </BreakpointContent>
@@ -246,105 +246,41 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "227"
-            endingLineNumber = "227"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
             landmarkName = "-startRecording"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "-startRecording"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "232"
-            endingLineNumber = "232"
-            landmarkName = "-startRecording"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "263"
-            endingLineNumber = "263"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "267"
-            endingLineNumber = "267"
-            landmarkName = "-saveVideo"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__27-[CaptureManager saveVideo]_block_invoke"
+                  symbolName = "-[CaptureManager startRecording]"
                   moduleName = "NewVideoRecorder"
-                  urlString = "file://localhost/Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-                  timestampString = "406440626.5351"
+                  urlString = "file:///Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+                  timestampString = "410414444.883603"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "267"
-                  endingLineNumber = "267"
-                  offsetFromSymbolStart = "156">
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "132">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__27-[CaptureManager saveVideo]_block_invoke_2"
+                  symbolName = "__32-[CaptureManager startRecording]_block_invoke"
                   moduleName = "NewVideoRecorder"
-                  urlString = "file://localhost/Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-                  timestampString = "406440626.535421"
+                  urlString = "file:///Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+                  timestampString = "410414444.883808"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "267"
-                  endingLineNumber = "267"
-                  offsetFromSymbolStart = "24">
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "8">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -356,105 +292,41 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "281"
-            endingLineNumber = "281"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "302"
-            endingLineNumber = "302"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "228"
-            endingLineNumber = "228"
+            startingLineNumber = "259"
+            endingLineNumber = "259"
             landmarkName = "-startRecording"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "287"
-            endingLineNumber = "287"
-            landmarkName = "-saveVideo"
             landmarkType = "5">
             <Locations>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "-[CaptureManager exportDidFinish:]"
+                  symbolName = "-[CaptureManager startRecording]"
                   moduleName = "NewVideoRecorder"
-                  urlString = "file://localhost/Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-                  timestampString = "406440626.536846"
+                  urlString = "file:///Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+                  timestampString = "410414444.88405"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "287"
-                  endingLineNumber = "287"
-                  offsetFromSymbolStart = "392">
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "132">
                </Location>
                <Location
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "__34-[CaptureManager exportDidFinish:]_block_invoke"
+                  symbolName = "__32-[CaptureManager startRecording]_block_invoke"
                   moduleName = "NewVideoRecorder"
-                  urlString = "file://localhost/Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-                  timestampString = "406440626.537067"
+                  urlString = "file:///Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+                  timestampString = "410414444.884255"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "287"
-                  endingLineNumber = "287"
-                  offsetFromSymbolStart = "92">
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "8">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -466,12 +338,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "288"
-            endingLineNumber = "288"
-            landmarkName = "-saveVideo"
+            startingLineNumber = "262"
+            endingLineNumber = "262"
+            landmarkName = "-startRecording"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -482,23 +354,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "291"
-            endingLineNumber = "291"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "293"
@@ -514,11 +370,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "295"
-            endingLineNumber = "295"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
             landmarkName = "-saveVideo"
             landmarkType = "5">
          </BreakpointContent>
@@ -530,7 +386,371 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "308"
+            endingLineNumber = "308"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "311"
+            endingLineNumber = "311"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "332"
+            endingLineNumber = "332"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
+            landmarkName = "-startRecording"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CaptureManager startRecording]"
+                  moduleName = "NewVideoRecorder"
+                  urlString = "file:///Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+                  timestampString = "410414444.885752"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "__32-[CaptureManager startRecording]_block_invoke"
+                  moduleName = "NewVideoRecorder"
+                  urlString = "file:///Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+                  timestampString = "410414444.885994"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "237"
+                  endingLineNumber = "237"
+                  offsetFromSymbolStart = "8">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "318"
+            endingLineNumber = "318"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "321"
+            endingLineNumber = "321"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "325"
+            endingLineNumber = "325"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "319"
+            endingLineNumber = "319"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "320"
+            endingLineNumber = "320"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "314"
+            endingLineNumber = "314"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "508"
+            endingLineNumber = "508"
+            landmarkName = "-copyFileToDocuments:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "278"
+            endingLineNumber = "278"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "276"
+            endingLineNumber = "276"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "287"
+            endingLineNumber = "287"
+            landmarkName = "-saveVideo"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CaptureManager saveVideo]"
+                  moduleName = "NewVideoRecorder"
+                  urlString = "file:///Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+                  timestampString = "410414444.889307"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "348">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[CaptureManager saveVideo]"
+                  moduleName = "NewVideoRecorder"
+                  urlString = "file:///Users/Kseniya/Documents/Work/NewVideoRecorder/NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+                  timestampString = "410414444.889504"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "265"
+                  endingLineNumber = "265"
+                  offsetFromSymbolStart = "1896">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "289"
@@ -546,7 +766,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "290"
@@ -562,11 +782,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "-saveVideo"
             landmarkType = "5">
          </BreakpointContent>
@@ -578,171 +798,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "284"
-            endingLineNumber = "284"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "282"
-            endingLineNumber = "282"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
-            landmarkName = "-copyFileToDocuments:"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "250"
-            endingLineNumber = "250"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "246"
-            endingLineNumber = "246"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "259"
-            endingLineNumber = "259"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "260"
-            endingLineNumber = "260"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440136.033758"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "261"
-            endingLineNumber = "261"
-            landmarkName = "-saveVideo"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "460"
-            endingLineNumber = "460"
+            startingLineNumber = "490"
+            endingLineNumber = "490"
             landmarkName = "-removeFile:"
             landmarkType = "5">
          </BreakpointContent>
@@ -754,11 +814,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "462"
-            endingLineNumber = "462"
+            startingLineNumber = "492"
+            endingLineNumber = "492"
             landmarkName = "-removeFile:"
             landmarkType = "5">
          </BreakpointContent>
@@ -770,11 +830,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "463"
-            endingLineNumber = "463"
+            startingLineNumber = "493"
+            endingLineNumber = "493"
             landmarkName = "@implementation CaptureManager(InternalUtilityMethods)"
             landmarkType = "3">
          </BreakpointContent>
@@ -786,11 +846,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "464"
-            endingLineNumber = "464"
+            startingLineNumber = "494"
+            endingLineNumber = "494"
             landmarkName = "-copyFileToDocuments:"
             landmarkType = "5">
          </BreakpointContent>
@@ -802,11 +862,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "461"
-            endingLineNumber = "461"
+            startingLineNumber = "491"
+            endingLineNumber = "491"
             landmarkName = "-removeFile:"
             landmarkType = "5">
          </BreakpointContent>
@@ -818,11 +878,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "458"
-            endingLineNumber = "458"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "-removeFile:"
             landmarkType = "5">
          </BreakpointContent>
@@ -834,11 +894,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "454"
-            endingLineNumber = "454"
+            startingLineNumber = "484"
+            endingLineNumber = "484"
             landmarkName = "-removeFile:"
             landmarkType = "5">
          </BreakpointContent>
@@ -850,11 +910,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
+            startingLineNumber = "482"
+            endingLineNumber = "482"
             landmarkName = "-removeFile:"
             landmarkType = "5">
          </BreakpointContent>
@@ -866,11 +926,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "449"
-            endingLineNumber = "449"
+            startingLineNumber = "479"
+            endingLineNumber = "479"
             landmarkName = "@implementation CaptureManager(InternalUtilityMethods)"
             landmarkType = "3">
          </BreakpointContent>
@@ -882,11 +942,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "447"
-            endingLineNumber = "447"
+            startingLineNumber = "477"
+            endingLineNumber = "477"
             landmarkName = "-tempFileURL"
             landmarkType = "5">
          </BreakpointContent>
@@ -898,11 +958,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "443"
-            endingLineNumber = "443"
+            startingLineNumber = "473"
+            endingLineNumber = "473"
             landmarkName = "-audioDevice"
             landmarkType = "5">
          </BreakpointContent>
@@ -914,11 +974,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "440"
-            endingLineNumber = "440"
+            startingLineNumber = "470"
+            endingLineNumber = "470"
             landmarkName = "-audioDevice"
             landmarkType = "5">
          </BreakpointContent>
@@ -930,11 +990,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "439"
-            endingLineNumber = "439"
+            startingLineNumber = "469"
+            endingLineNumber = "469"
             landmarkName = "-audioDevice"
             landmarkType = "5">
          </BreakpointContent>
@@ -946,11 +1006,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "437"
-            endingLineNumber = "437"
+            startingLineNumber = "467"
+            endingLineNumber = "467"
             landmarkName = "-audioDevice"
             landmarkType = "5">
          </BreakpointContent>
@@ -962,11 +1022,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "436"
-            endingLineNumber = "436"
+            startingLineNumber = "466"
+            endingLineNumber = "466"
             landmarkName = "-audioDevice"
             landmarkType = "5">
          </BreakpointContent>
@@ -978,11 +1038,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "435"
-            endingLineNumber = "435"
+            startingLineNumber = "465"
+            endingLineNumber = "465"
             landmarkName = "@implementation CaptureManager(InternalUtilityMethods)"
             landmarkType = "3">
          </BreakpointContent>
@@ -994,11 +1054,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406441023.316107"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "477"
-            endingLineNumber = "477"
+            startingLineNumber = "507"
+            endingLineNumber = "507"
             landmarkName = "-copyFileToDocuments:"
             landmarkType = "5">
          </BreakpointContent>
@@ -1010,11 +1070,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "444"
-            endingLineNumber = "444"
+            startingLineNumber = "474"
+            endingLineNumber = "474"
             landmarkName = "@implementation CaptureManager(InternalUtilityMethods)"
             landmarkType = "3">
          </BreakpointContent>
@@ -1026,11 +1086,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "NewVideoRecorder/VideoRecorder/AVCam/CaptureManager.m"
-            timestampString = "406440691.929522"
+            timestampString = "410414798.583634"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "445"
-            endingLineNumber = "445"
+            startingLineNumber = "475"
+            endingLineNumber = "475"
             landmarkName = "-tempFileURL"
             landmarkType = "5">
          </BreakpointContent>

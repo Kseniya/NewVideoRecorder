@@ -53,6 +53,7 @@
     //Create CameraView
 	KZCameraView *cam = [[KZCameraView alloc]initWithFrame:self.view.frame withVideoPreviewFrame:CGRectMake(0.0, 0.0, 320.0, 320.0)];
     cam.maxDuration = 10.0;
+    cam.showCameraSwitch = YES; //Say YES to button to switch between front and back cameras
     //Create "save" button
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:cam action:@selector(saveVideo:)];
     

@@ -47,6 +47,9 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 @property (nonatomic,assign) float duration;
 @property (nonatomic,strong) NSTimer *durationTimer;
 
+//Button to switch between back and front cameras
+@property (nonatomic,strong) UIButton *camerasSwitchBtn;
+
 @end
 
 @interface KZCameraView (InternalMethods) <UIGestureRecognizerDelegate>
@@ -84,7 +87,7 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
                 
                 CGRect bounds = self.videoPreviewView.bounds;
                 [newCaptureVideoPreviewLayer setFrame:bounds];
-                NSLog(@"%f, %f, %f, %f", newCaptureVideoPreviewLayer.frame.origin.x, newCaptureVideoPreviewLayer.frame.origin.y, newCaptureVideoPreviewLayer.frame.size.width, newCaptureVideoPreviewLayer.frame.size.height);
+                //NSLog(@"%f, %f, %f, %f", newCaptureVideoPreviewLayer.frame.origin.x, newCaptureVideoPreviewLayer.frame.origin.y, newCaptureVideoPreviewLayer.frame.size.width, newCaptureVideoPreviewLayer.frame.size.height);
                 
                 if ([newCaptureVideoPreviewLayer.connection isVideoOrientationSupported]) {
                     [newCaptureVideoPreviewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
@@ -161,6 +164,33 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
     return self;
 }
 
+-(void)setShowCameraSwitch:(BOOL)showCameraSwitch
+{
+    if (showCameraSwitch)
+    {
+        if (!self.camerasSwitchBtn)
+        {
+            self.camerasSwitchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+            [self.camerasSwitchBtn setImage:[UIImage imageNamed:@"switchCamera"] forState:UIControlStateNormal];
+            self.camerasSwitchBtn.frame = CGRectMake(self.frame.size.width - 50.0, 10.0, 40.0, 40.0);
+            [self.camerasSwitchBtn addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
+            [self addSubview:self.camerasSwitchBtn];
+        }
+    }
+    else
+    {
+        if (self.camerasSwitchBtn)
+        {
+            [self.camerasSwitchBtn removeFromSuperview];
+            self.camerasSwitchBtn = nil;
+        }
+    }
+}
+
+-(void)switchCamera
+{
+    [self.captureManager switchCamera];
+}
 
 - (NSString *)stringForFocusMode:(AVCaptureFocusMode)focusMode
 {
