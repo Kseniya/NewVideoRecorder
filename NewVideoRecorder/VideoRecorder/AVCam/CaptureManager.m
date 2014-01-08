@@ -129,7 +129,7 @@
 			}			
         };
         
-        self.assetsURLs = [[NSMutableArray alloc] init];
+        self.assets = [[NSMutableArray alloc] init];
         NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
         [self setDeviceConnectedObserver:[notificationCenter addObserverForName:AVCaptureDeviceWasConnectedNotification object:nil queue:nil usingBlock:deviceConnectedBlock]];
         [self setDeviceDisconnectedObserver:[notificationCenter addObserverForName:AVCaptureDeviceWasDisconnectedNotification object:nil queue:nil usingBlock:deviceDisconnectedBlock]];
@@ -250,7 +250,6 @@
     }
 }
 
-
 - (void) startRecording
 {
     if ([[UIDevice currentDevice] isMultitaskingSupported]) {
@@ -272,7 +271,7 @@
 
 - (void) saveVideo
 {
-    if ([self.assetsURLs count] != 0) {
+    if ([self.assets count] != 0) {
 
         // 1 - Create AVMutableComposition object. This object will hold your AVMutableCompositionTrack instances.
         AVMutableComposition *mixComposition = [[AVMutableComposition alloc] init];
@@ -282,21 +281,18 @@
         AVMutableCompositionTrack *audioTrack = [mixComposition addMutableTrackWithMediaType:AVMediaTypeAudio
                                                                             preferredTrackID:kCMPersistentTrackID_Invalid];        
         __block CMTime time = kCMTimeZero;
+        __block CGAffineTransform translate;
+        __block CGSize size;
         
-        CGAffineTransform translate;
-        CGSize size;
-        
-        for (NSString *string in self.assetsURLs)
-        {
+        [self.assets enumerateObjectsUsingBlock:^(AVAsset *asset, NSUInteger idx, BOOL *stop) {
 
-            AVAsset *asset = [AVAsset assetWithURL:[NSURL fileURLWithPath:string]];//obj]];
+           // AVAsset *asset = [AVAsset assetWithURL:[NSURL fileURLWithPath:string]];//obj]];
             AVAssetTrack *videoAssetTrack = [[asset tracksWithMediaType:AVMediaTypeVideo] objectAtIndex:0];
             [videoTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
                            ofTrack:videoAssetTrack atTime:time error:nil];
             
             [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
                                 ofTrack:[[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:time error:nil];
-            int idx = [self.assetsURLs indexOfObject:string];
             if(idx == 0)
             {//Square
                 size = CGSizeMake(videoAssetTrack.naturalSize.height, videoAssetTrack.naturalSize.height);
@@ -307,7 +303,7 @@
             }
             
             time = CMTimeAdd(time, asset.duration);
-        }
+        }];
         
         AVMutableVideoCompositionInstruction *vtemp = [AVMutableVideoCompositionInstruction videoCompositionInstruction];
         vtemp.timeRange = CMTimeRangeMake(kCMTimeZero, time);
@@ -337,7 +333,7 @@
         // 5 - Create exporter
         self.exportSession = [[AVAssetExportSession alloc] initWithAsset:mixComposition
                                                                           presetName:AVAssetExportPresetHighestQuality];
-        self.exportSession.outputURL=url;
+        self.exportSession.outputURL = url;
         self.exportSession.outputFileType = AVFileTypeQuickTimeMovie;
         self.exportSession.shouldOptimizeForNetworkUse = YES;
         self.exportSession.videoComposition = videoComposition;
@@ -355,11 +351,22 @@
 
 -(void)exportDidFinish:(AVAssetExportSession*)session {
     self.exportSession = nil;
-    [self.assetsURLs enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(id obj, NSUInteger idx, BOOL *stop) {
-        //delete stored pieces
-        [self removeFile:[NSURL fileURLWithPath:obj]];
-        }];
-    [self.assetsURLs removeAllObjects];
+    
+    //delete stored pieces
+    [self.assets enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(AVAsset *asset, NSUInteger idx, BOOL *stop) {
+        
+        NSURL *fileURL = nil;
+        if ([asset isKindOfClass:AVURLAsset.class])
+        {
+            AVURLAsset *urlAsset = (AVURLAsset*)asset;
+            fileURL = urlAsset.URL;
+        }
+        
+        if (fileURL)
+            [self removeFile:fileURL];
+    }];
+    
+    [self.assets removeAllObjects];
     [self.delegate removeProgress];
     
     if (session.status == AVAssetExportSessionStatusCompleted) {
@@ -378,7 +385,7 @@
             }];
         }
     }
-    [self.assetsURLs removeAllObjects];
+    [self.assets removeAllObjects];
 }
 
 
@@ -431,6 +438,26 @@
 			}
 		}
 	}
+}
+
+
+-(void) deleteLastAsset
+{
+    AVAsset *asset = [self.assets lastObject];
+    
+    [self.delegate removeTimeFromDuration:CMTimeGetSeconds(asset.duration)];
+    
+    NSURL *fileURL = nil;
+    if ([asset isKindOfClass:AVURLAsset.class])
+    {
+        AVURLAsset *urlAsset = (AVURLAsset*)asset;
+        fileURL = urlAsset.URL;
+    }
+    
+    if (fileURL)
+        [self removeFile:fileURL];
+    
+    [self.assets removeLastObject];
 }
 
 @end
@@ -498,8 +525,6 @@
 	NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
 	[dateFormatter setDateFormat:@"yyyy-MM-dd_HH-mm-ss"];
 	NSString *destinationPath = [documentsDirectory stringByAppendingFormat:@"/output_%@.mov", [dateFormatter stringFromDate:[NSDate date]]];
-    //add path to the file into the array or pieces
-    [self.assetsURLs addObject:destinationPath];
     
 	NSError	*error;
 	if (![[NSFileManager defaultManager] copyItemAtURL:fileURL toURL:[NSURL fileURLWithPath:destinationPath] error:&error]) {
@@ -507,6 +532,10 @@
 			[[self delegate] captureManager:self didFailWithError:error];
 		}
 	}
+    
+    //add asset into the array or pieces
+    AVAsset *asset = [AVAsset assetWithURL:[NSURL fileURLWithPath:destinationPath]];
+    [self.assets addObject:asset];
 }
 
 @end

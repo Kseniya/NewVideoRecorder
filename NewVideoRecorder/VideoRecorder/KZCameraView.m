@@ -37,18 +37,25 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 @property (nonatomic, strong) UIView *videoPreviewView;
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (nonatomic, strong) UILabel *focusModeLabel;
-//Progress
+
+@property (nonatomic, strong) UIImageView *recordBtn;
+
+//Exporting progress
 @property (nonatomic,strong) UIView *progressView;
 @property (nonatomic,strong) UIProgressView *progressBar;
 @property (nonatomic,strong) UILabel *progressLabel;
 @property (nonatomic,strong) UIActivityIndicatorView *activityView;
 
+//Recording progress
 @property (nonatomic,strong) UIProgressView *durationProgressBar;
 @property (nonatomic,assign) float duration;
 @property (nonatomic,strong) NSTimer *durationTimer;
 
 //Button to switch between back and front cameras
 @property (nonatomic,strong) UIButton *camerasSwitchBtn;
+
+//Delete last piece
+@property (nonatomic,strong) UIButton *deleteLastBtn;
 
 @end
 
@@ -87,7 +94,6 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
                 
                 CGRect bounds = self.videoPreviewView.bounds;
                 [newCaptureVideoPreviewLayer setFrame:bounds];
-                //NSLog(@"%f, %f, %f, %f", newCaptureVideoPreviewLayer.frame.origin.x, newCaptureVideoPreviewLayer.frame.origin.y, newCaptureVideoPreviewLayer.frame.size.width, newCaptureVideoPreviewLayer.frame.size.height);
                 
                 if ([newCaptureVideoPreviewLayer.connection isVideoOrientationSupported]) {
                     [newCaptureVideoPreviewLayer.connection setVideoOrientation:AVCaptureVideoOrientationPortrait];
@@ -104,10 +110,18 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
                     [[[self captureManager] session] startRunning];
                 });
                 
-                //Record Long Press Gesture
-                UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(holdScreen:)];
+                //set record button image. Replace with any image
+                UIImage *recordImage = [UIImage imageNamed:@"recordBtn"];
+                self.recordBtn = [[UIImageView alloc]initWithImage:recordImage];
+                self.recordBtn.bounds = CGRectMake(0.0, 0.0, recordImage.size.width, recordImage.size.height);
+                self.recordBtn.center = CGPointMake(self.frame.size.width/2, self.videoPreviewView.frame.size.height + (self.frame.size.height - self.videoPreviewView.frame.size.height)/2);
+                self.recordBtn.userInteractionEnabled = YES;
+                [self addSubview:self.recordBtn];
+                
+                //Record Long Press Gesture on the record button
+                UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(startRecording:)];
                 [longPress setDelegate:self];
-                [self addGestureRecognizer:longPress];
+                [self.recordBtn addGestureRecognizer:longPress];
                 
                 self.durationProgressBar = [[UIProgressView alloc]initWithFrame:CGRectMake(0.0, videoFrame.origin.y + videoFrame.size.height, videoFrame.size.width, 2.0)];
                 [self addSubview:self.durationProgressBar];
@@ -158,6 +172,13 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
                 [self.progressView addSubview:self.progressBar];
                 [self.progressView addSubview:self.progressLabel];
                 [self.progressView addSubview:self.activityView];
+                
+                self.deleteLastBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
+                self.deleteLastBtn.bounds = CGRectMake(0.0, 0.0, 100.0, 30.0);
+                self.deleteLastBtn.center = CGPointMake(60.0, self.videoPreviewView.frame.size.height + (self.frame.size.height - self.videoPreviewView.frame.size.height)/2);
+                [self.deleteLastBtn setTitle:@"Delete" forState:UIControlStateNormal];
+                [self.deleteLastBtn addTarget:self.captureManager action:@selector(deleteLastAsset) forControlEvents:UIControlEventTouchUpInside];
+                [self addSubview:self.deleteLastBtn];
             }
         }
     }
@@ -170,9 +191,11 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
     {
         if (!self.camerasSwitchBtn)
         {
+            UIImage *btnImg = [UIImage imageNamed:@"switchCamera"];
             self.camerasSwitchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-            [self.camerasSwitchBtn setImage:[UIImage imageNamed:@"switchCamera"] forState:UIControlStateNormal];
-            self.camerasSwitchBtn.frame = CGRectMake(self.frame.size.width - 50.0, 10.0, 40.0, 40.0);
+            [self.camerasSwitchBtn setImage:btnImg forState:UIControlStateNormal];
+            self.camerasSwitchBtn.bounds = CGRectMake(0.0, 0.0, btnImg.size.width, btnImg.size.height);
+            self.camerasSwitchBtn.center = CGPointMake(self.frame.size.width - btnImg.size.width/2 - 10.0, self.videoPreviewView.frame.size.height + (self.frame.size.height - self.videoPreviewView.frame.size.height)/2);
             [self.camerasSwitchBtn addTarget:self action:@selector(switchCamera) forControlEvents:UIControlEventTouchUpInside];
             [self addSubview:self.camerasSwitchBtn];
         }
@@ -229,7 +252,7 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 
 #pragma mark
 
-- (IBAction)holdScreen:(UILongPressGestureRecognizer*)recognizer
+- (IBAction)startRecording:(UILongPressGestureRecognizer*)recognizer
 {
     switch (recognizer.state)
     {
@@ -252,7 +275,7 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
                 [self.durationTimer invalidate];
                 [[self captureManager] stopRecording];
                 self.videoPreviewView.layer.borderColor = [UIColor clearColor].CGColor;
-                NSLog(@"END number of pieces %lu", (unsigned long)[self.captureManager.assetsURLs count]);
+                NSLog(@"END number of pieces %lu", (unsigned long)[self.captureManager.assets count]);
             }
             break;
         }
@@ -280,6 +303,13 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
         self.durationTimer = nil;
     }
 }
+
+- (void) removeTimeFromDuration:(float)removeTime;
+{
+    self.duration = self.duration - removeTime;
+    self.durationProgressBar.progress = self.duration/self.maxDuration;
+}
+
 
 - (IBAction)saveVideo:(id)sender {
     [self.captureManager saveVideo];

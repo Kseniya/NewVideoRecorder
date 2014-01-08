@@ -51,7 +51,7 @@
     }
     
     //Create CameraView
-	KZCameraView *cam = [[KZCameraView alloc]initWithFrame:self.view.frame withVideoPreviewFrame:CGRectMake(0.0, 0.0, 320.0, 320.0)];
+	KZCameraView *cam = [[KZCameraView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height - 64.0) withVideoPreviewFrame:CGRectMake(0.0, 0.0, 320.0, 320.0)];
     cam.maxDuration = 10.0;
     cam.showCameraSwitch = YES; //Say YES to button to switch between front and back cameras
     //Create "save" button

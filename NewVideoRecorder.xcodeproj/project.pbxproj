@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E0B672E187CE83900E13BA5 /* recordBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E0B672C187CE83900E13BA5 /* recordBtn.png */; };
+		6E0B672F187CE83900E13BA5 /* recordBtn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6E0B672D187CE83900E13BA5 /* recordBtn@2x.png */; };
 		6E28FD40181615AD00155DB8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28FD3F181615AD00155DB8 /* Foundation.framework */; };
 		6E28FD42181615AD00155DB8 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28FD41181615AD00155DB8 /* CoreGraphics.framework */; };
 		6E28FD44181615AD00155DB8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E28FD43181615AD00155DB8 /* UIKit.framework */; };
@@ -46,6 +48,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6E0B672C187CE83900E13BA5 /* recordBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = recordBtn.png; sourceTree = "<group>"; };
+		6E0B672D187CE83900E13BA5 /* recordBtn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "recordBtn@2x.png"; sourceTree = "<group>"; };
 		6E28FD3C181615AD00155DB8 /* NewVideoRecorder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NewVideoRecorder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6E28FD3F181615AD00155DB8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6E28FD41181615AD00155DB8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -167,6 +171,8 @@
 		6E28FD46181615AD00155DB8 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				6E0B672C187CE83900E13BA5 /* recordBtn.png */,
+				6E0B672D187CE83900E13BA5 /* recordBtn@2x.png */,
 				6E58CAA51876679900F69FDE /* switchCamera.png */,
 				6E58CAA61876679900F69FDE /* switchCamera@2x.png */,
 				6E28FD47181615AD00155DB8 /* NewVideoRecorder-Info.plist */,
@@ -295,8 +301,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E28FD58181615AE00155DB8 /* Images.xcassets in Resources */,
+				6E0B672E187CE83900E13BA5 /* recordBtn.png in Resources */,
 				6E28FD4A181615AE00155DB8 /* InfoPlist.strings in Resources */,
 				6E58CAA81876679900F69FDE /* switchCamera@2x.png in Resources */,
+				6E0B672F187CE83900E13BA5 /* recordBtn@2x.png in Resources */,
 				6E58CAA71876679900F69FDE /* switchCamera.png in Resources */,
 				6E28FD53181615AE00155DB8 /* Main.storyboard in Resources */,
 			);
