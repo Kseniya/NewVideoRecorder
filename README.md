@@ -1,8 +1,9 @@
 VideoRecorder
 ================
-Very quickly put together, needs a lot of work.
+Needs more work.
 
 Vine like video recorder. Hold you finger - record, let it go - stop recording.
+Ability to switch between front and back camera, plus deleting last recorded piece.
 
 Based around Apple's AVCam sample code.
 
