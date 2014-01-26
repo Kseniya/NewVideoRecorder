@@ -64,7 +64,7 @@
 
 -(IBAction)saveVideo:(id)sender
 {
-    [self.cam saveVideo:sender completion:^(BOOL success) {
+    [self.cam saveVideoWithCompletionBlock:^(BOOL success) {
         if (success)
         {
             NSLog(@"WILL PUSH NEW CONTROLLER HERE");
