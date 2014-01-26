@@ -28,6 +28,8 @@
 
 @interface RecorderViewController ()
 
+@property (nonatomic, strong) KZCameraView *cam;
+
 @end
 
 @implementation RecorderViewController
@@ -51,13 +53,24 @@
     }
     
     //Create CameraView
-	KZCameraView *cam = [[KZCameraView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height - 64.0) withVideoPreviewFrame:CGRectMake(0.0, 0.0, 320.0, 320.0)];
-    cam.maxDuration = 10.0;
-    cam.showCameraSwitch = YES; //Say YES to button to switch between front and back cameras
+	self.cam = [[KZCameraView alloc]initWithFrame:CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height - 64.0) withVideoPreviewFrame:CGRectMake(0.0, 0.0, 320.0, 320.0)];
+    self.cam.maxDuration = 10.0;
+    self.cam.showCameraSwitch = YES; //Say YES to button to switch between front and back cameras
     //Create "save" button
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:cam action:@selector(saveVideo:)];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Save" style:UIBarButtonItemStyleBordered target:self action:@selector(saveVideo:)];
     
-    [self.view addSubview:cam];
+    [self.view addSubview:self.cam];
+}
+
+-(IBAction)saveVideo:(id)sender
+{
+    [self.cam saveVideo:sender completion:^(BOOL success) {
+        if (success)
+        {
+            NSLog(@"WILL PUSH NEW CONTROLLER HERE");
+            [self performSegueWithIdentifier:@"SavedVideoPush" sender:sender];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning

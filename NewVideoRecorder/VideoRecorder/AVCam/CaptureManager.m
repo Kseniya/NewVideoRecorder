@@ -269,7 +269,7 @@
     [[self recorder] stopRecording];
 }
 
-- (void) saveVideo
+- (void) saveVideoWithCompletionBlock:(void (^)(BOOL))completion
 {
     if ([self.assets count] != 0) {
 
@@ -340,18 +340,21 @@
         
         self.exportProgressBarTimer = [NSTimer scheduledTimerWithTimeInterval:.1 target:self.delegate selector:@selector(updateProgress) userInfo:nil repeats:YES];
         
+        __block id weakSelf = self;
+        
         [self.exportSession exportAsynchronouslyWithCompletionHandler:^{
             NSLog (@"i is in your block, exportin. status is %ld",(long)self.exportSession.status);
             dispatch_async(dispatch_get_main_queue(), ^{
-                [self exportDidFinish:self.exportSession];
+                [weakSelf exportDidFinish:self.exportSession withCompletionBlock:completion];
             });
         }];
     }
 }
 
--(void)exportDidFinish:(AVAssetExportSession*)session {
+-(void)exportDidFinish:(AVAssetExportSession*)session withCompletionBlock:(void(^)(BOOL success))completion {
     self.exportSession = nil;
     
+    __block id weakSelf = self;
     //delete stored pieces
     [self.assets enumerateObjectsWithOptions:NSEnumerationConcurrent usingBlock:^(AVAsset *asset, NSUInteger idx, BOOL *stop) {
         
@@ -363,7 +366,7 @@
         }
         
         if (fileURL)
-            [self removeFile:fileURL];
+            [weakSelf removeFile:fileURL];
     }];
     
     [self.assets removeAllObjects];
@@ -375,12 +378,12 @@
         if ([library videoAtPathIsCompatibleWithSavedPhotosAlbum:outputURL]) {
             [library writeVideoAtPathToSavedPhotosAlbum:outputURL completionBlock:^(NSURL *assetURL, NSError *error){
                 //delete file from documents after saving to camera roll
-                [self removeFile:outputURL];
+                [weakSelf removeFile:outputURL];
                 
                 if (error) {
-                    [self.delegate doneSavingWithError:YES];
+                    completion (NO);
                 } else {
-                    [self.delegate doneSavingWithError:NO];
+                    completion (YES);
                 }
             }];
         }

@@ -74,13 +74,13 @@
 - (BOOL) setupSession;
 - (void) startRecording;
 - (void) stopRecording;
-- (void) saveVideo;
+- (void) saveVideoWithCompletionBlock:(void(^)(BOOL success))completion;
 - (NSUInteger) cameraCount;
 - (NSUInteger) micCount;
 - (void) autoFocusAtPoint:(CGPoint)point;
 - (void) continuousFocusAtPoint:(CGPoint)point;
-- (void)switchCamera;
-- (void)deleteLastAsset;
+- (void) switchCamera;
+- (void) deleteLastAsset;
 
 @end
 
@@ -92,7 +92,7 @@
 
 - (void) updateProgress;
 - (void) removeProgress;
-- (void) doneSavingWithError:(BOOL)error;
+
 - (void) captureManager:(CaptureManager *)captureManager didFailWithError:(NSError *)error;
 - (void) captureManagerRecordingBegan:(CaptureManager *)captureManager;
 - (void) captureManagerRecordingFinished:(CaptureManager *)captureManager;

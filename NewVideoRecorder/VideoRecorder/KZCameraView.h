@@ -34,5 +34,5 @@
 @property (nonatomic,assign) BOOL showCameraSwitch;
 
 - (id)initWithFrame:(CGRect)frame withVideoPreviewFrame:(CGRect)videoFrame;
-- (IBAction)saveVideo:(id)sender;
+- (IBAction)saveVideo:(id)sender completion:(void(^)(BOOL success))completion;
 @end

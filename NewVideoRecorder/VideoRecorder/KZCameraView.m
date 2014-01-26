@@ -311,8 +311,36 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
 }
 
 
-- (IBAction)saveVideo:(id)sender {
-    [self.captureManager saveVideo];
+- (IBAction)saveVideo:(id)sender completion:(void (^)(BOOL))completion {
+    
+    __block id weakSelf = self;
+    
+    [self.captureManager saveVideoWithCompletionBlock:^(BOOL success) {
+        
+        if (completion)
+        {
+            self.progressLabel.text = @"Saved To Photo Album";
+            [weakSelf performSelector:@selector(refresh) withObject:nil afterDelay:0.5];
+            
+        }
+        else
+        {
+            self.progressLabel.text = @"Video Saving Failed";
+        }
+        
+        [self.activityView stopAnimating];
+        
+        completion (success);
+    }];
+}
+
+-(void)refresh
+{
+    self.progressView.hidden = YES;
+    self.duration = 0.0;
+    self.durationProgressBar.progress = 0.0;
+    [self.durationTimer invalidate];
+    self.durationTimer = nil;
 }
 
 @end
@@ -431,27 +459,6 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
     self.progressBar.hidden = YES;
     [self.activityView startAnimating];
     self.progressLabel.text = @"Saving to Camera Roll";
-}
-
-- (void) doneSavingWithError:(BOOL)error
-{
-    if (error) {
-        self.progressLabel.text = @"Video Saving Failed";
-    } else {
-        self.progressLabel.text = @"Saved To Photo Album";
-        [self performSelector:@selector(refresh) withObject:nil afterDelay:0.5];
-    }
-    
-    [self.activityView stopAnimating];
-}
-
--(void)refresh
-{
-    self.progressView.hidden = YES;
-    self.duration = 0.0;
-    self.durationProgressBar.progress = 0.0;
-    [self.durationTimer invalidate];
-    self.durationTimer = nil;
 }
 
 - (void)captureManager:(CaptureManager *)captureManager didFailWithError:(NSError *)error
