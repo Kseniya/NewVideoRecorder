@@ -310,8 +310,7 @@ static void *AVCamFocusModeObserverContext = &AVCamFocusModeObserverContext;
     self.durationProgressBar.progress = self.duration/self.maxDuration;
 }
 
-
-- (IBAction)saveVideo:(id)sender completion:(void (^)(BOOL))completion {
+- (void)saveVideoWithCompletionBlock:(void(^)(BOOL success))completion {
     
     __block id weakSelf = self;
     
