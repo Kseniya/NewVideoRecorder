@@ -294,12 +294,29 @@
             [audioTrack insertTimeRange:CMTimeRangeMake(kCMTimeZero, asset.duration)
                                 ofTrack:[[asset tracksWithMediaType:AVMediaTypeAudio] objectAtIndex:0] atTime:time error:nil];
             if(idx == 0)
-            {//Square
-                size = CGSizeMake(videoAssetTrack.naturalSize.height, videoAssetTrack.naturalSize.height);
-                
-                translate = CGAffineTransformMakeTranslation(-420, 0);
-                CGAffineTransform newTransform = CGAffineTransformConcat(translate, videoAssetTrack.preferredTransform);
+            {
+                // Set your desired output aspect ratio here. 1.0 for square, 16/9.0 for widescreen, etc.
+                CGFloat desiredAspectRatio = 1.0;
+                CGSize naturalSize = CGSizeMake(videoAssetTrack.naturalSize.width, videoAssetTrack.naturalSize.height);
+                CGSize adjustedSize = CGSizeApplyAffineTransform(naturalSize, videoAssetTrack.preferredTransform);
+                adjustedSize.width = ABS(adjustedSize.width);
+                adjustedSize.height = ABS(adjustedSize.height);
+                if (adjustedSize.width > adjustedSize.height) {
+                    size = CGSizeMake(adjustedSize.height * desiredAspectRatio, adjustedSize.height);
+                    translate = CGAffineTransformMakeTranslation(-(adjustedSize.width - size.width) / 2.0, 0);
+                } else {
+                    size = CGSizeMake(adjustedSize.width, adjustedSize.width / desiredAspectRatio);
+                    translate = CGAffineTransformMakeTranslation(0, -(adjustedSize.height - size.height) / 2.0);
+                }
+                CGAffineTransform newTransform = CGAffineTransformConcat(videoAssetTrack.preferredTransform, translate);
                 [videoTrack setPreferredTransform:newTransform];
+                
+                // Check the output size - for best results use sizes that are multiples of 16
+                // More info: http://stackoverflow.com/questions/22883525/avassetexportsession-giving-me-a-green-border-on-right-and-bottom-of-output-vide
+                if (fmod(size.width, 4.0) != 0)
+                    NSLog(@"NOTE: The video output width %0.1f is not a multiple of 4, which may cause a green line to appear at the edge of the video", size.width);
+                if (fmod(size.height, 4.0) != 0)
+                    NSLog(@"NOTE: The video output height %0.1f is not a multiple of 4, which may cause a green line to appear at the edge of the video", size.height);
             }
             
             time = CMTimeAdd(time, asset.duration);
